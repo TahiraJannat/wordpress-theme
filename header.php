@@ -74,7 +74,7 @@
 
 			<div class="emg-basis-9/12">
 				<nav id="site-navigation" class="emg-main-navigation emg-p-4 emg-flex emg-items-center">
-					<button class="emg-menu-toggle xl:emg-hidden" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'emega'); ?></button>
+					<button class="emg-menu-toggle emg-hidden" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'emega'); ?></button>
 
 					<?php
 					// Nav Menu
@@ -84,7 +84,7 @@
 						'container'       => 'ul',
 						'container_class' => '',
 						'container_id'    => '',
-						'menu_class'      => 'emg-inline-flex emg-space-x-4 emg-menu "', // Add a specific class to the ul
+						'menu_class'      => 'emg-inline-flex emg-space-x-4 emg-menu  "', // Add a specific class to the ul
 						'menu_id'         => 'primary-menu',
 						'echo'            => true,
 						'fallback_cb'     => 'wp_page_menu',
@@ -92,7 +92,7 @@
 						'after'           => '',
 						'link_before'     => '',
 						'link_after'      => '',
-						'items_wrap'      => '<ul id=" %1$s" class="%2$s">%3$s</ul>',
+						'items_wrap'      => '<ul id=" %1$s" class="%2$s">%3$s <a class=""></a></ul>',
 						'depth'           => 0,
 						'walker'          => ''
 					);

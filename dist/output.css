@@ -599,10 +599,6 @@ video {
   height: 5rem;
 }
 
-.emg-basis-1\/2 {
-  flex-basis: 50%;
-}
-
 .emg-basis-1\/4 {
   flex-basis: 25%;
 }
@@ -625,46 +621,52 @@ video {
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.emg-bg-gray-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-}
-
 .emg-bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.emg-bg-red-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
 
 .emg-p-4 {
   padding: 1rem;
 }
 
-.emg-px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.emg-py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.emg-text-white {
+.emg-text-black {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-@media (min-width: 1280px) {
-  .xl\:emg-block {
-    display: block;
-  }
+.emg-menu li a {
+  color: black;
+}
 
-  .xl\:emg-hidden {
-    display: none;
-  }
+.emg-menu li a:hover {
+  color: #fbc02d !important;
+}
+
+emg-menu li {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+li > a:after {
+  content: '';
+  display: block;
+  height: 1.5px;
+  background: #fbc02d;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+li > a:hover:after {
+  transform: scaleX(1);
+  transition: transform 0.3s;
+}
+
+.active {
+  color: #fbc02d !important;
+}
+
+.hover\:emg-text-red-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity));
 }
