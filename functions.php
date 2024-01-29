@@ -170,6 +170,7 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+// require get_template_directory() . '/inc/core/emega-customize-manager.php';
 
 /**
  * Load Jetpack compatibility file.
@@ -185,10 +186,3 @@ function emega_theme_scripts() {
 	wp_enqueue_style( 'output', get_template_directory_uri() . '/dist/output.css', array() );
 }
 add_action( 'wp_enqueue_scripts', 'emega_theme_scripts' );
-
-class Tailwind_CSS_Menu_Walker extends Walker_Nav_Menu {
-    function start_lvl(&$output, $depth = 0, $args = null) {
-        $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<ul class='sub-menu'>\n";
-    }
-}
