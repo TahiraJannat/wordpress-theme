@@ -14,6 +14,26 @@ function emega_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	//   $wp_customize->add_control();
+//   $wp_customize->get_control();
+//   $wp_customize->remove_control();
+$wp_customize->add_setting('emega_theme_options[color_scheme]', array(
+'default'        => 'value2',
+'capability'     => 'edit_theme_options',
+'type'           => 'option',
+));
+$wp_customize->add_control('emega_color_scheme', array(
+'label'      => __('Color Scheme', 'emega'),
+'section'    => 'emega_color_scheme',
+'settings'   => 'emega_theme_options[color_scheme]',
+'type'       => 'radio',
+'choices'    => array(
+'value1' => 'Choice 1',
+'value2' => 'Choice 2',
+'value3' => 'Choice 3',
+),
+));
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial(
@@ -31,6 +51,11 @@ function emega_customize_register( $wp_customize ) {
 			)
 		);
 	}
+	$wp_customize->add_control('emega_text_test', array(
+'label'      => __('Text Test', 'emega'),
+'section'    => 'emega_color_scheme',
+'settings'   => 'emega_theme_options[text_test]',
+));
 }
 add_action( 'customize_register', 'emega_customize_register' );
 

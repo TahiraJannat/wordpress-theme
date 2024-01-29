@@ -89,4 +89,26 @@
             menuItem.classList.toggle('focus');
         }
     }
+    var linkClicked = document.querySelectorAll('.emg-menu li a');
+    var arrayFromSpread = [...linkClicked];
+
+    console.log('first link clicked', arrayFromSpread);
+    var numClass = arrayFromSpread.length;
+    console.log(numClass);
+
+    for (var i = 0; i < numClass; i++) {
+        arrayFromSpread[i].addEventListener(
+            'click',
+
+            function (event) {
+                // Remove "active" class from all links
+                arrayFromSpread[i].classList.add('active');
+                // Add "active" class to the clicked link
+                // this.classList.add('active');
+
+                // Prevent the default behavior of the link (e.g., navigating to a new page)
+            },
+            false
+        );
+    }
 })();

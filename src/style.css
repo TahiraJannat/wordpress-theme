@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.emg-menu li a {
+    color: black;
+}
+
+.emg-menu li a:hover {
+    color: #fbc02d !important;
+}
+emg-menu li {
+    text-align: center;
+    text-transform: uppercase;
+}
+li > a:after {
+    content: '';
+    display: block;
+    height: 1.5px;
+    background: #fbc02d;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+li > a:hover:after {
+    transform: scaleX(1);
+    transition: transform 0.3s;
+}
+.active {
+    color: #fbc02d !important;
+}
